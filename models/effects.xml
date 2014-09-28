@@ -1,0 +1,35 @@
+<PropertyList>
+
+	<!-- effects -->
+
+	<model>
+		<name>flame</name>
+		<path>Aircraft/rah-66/models/effects/flame.xml</path>
+		<condition>
+			<equals>
+				<property>controls/armament/trigger</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+	</model>
+
+	<model>
+		<name>fire</name>
+		<path>Aircraft/rah-66/models/effects/fire.xml</path>
+		<condition>
+			<equals>
+				<property>sim/crashed</property>
+				<value type="bool">true</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>-1.05</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 0.75</z-m>
+			<heading-deg>0</heading-deg>
+			<roll-deg>0</roll-deg>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+	
+</PropertyList>	
