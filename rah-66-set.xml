@@ -7,7 +7,7 @@
 		<!-- info -->
 		<description>Boeing-Sikorsky RAH-66 Comanche</description>
 		<author>Petar Jedvaj, Edin Hozic, Stephen Madeira and Gary Brown</author>
-		<status>1.7.1</status>
+		<status>1.7.3</status>
 		<rating>
 			<FDM type="int">4</FDM>
 			<systems type="int">2</systems>
@@ -488,9 +488,11 @@
 			<file>Aircraft/rah-66/nasal/main.nas</file>
 			<file>Aircraft/rah-66/nasal/hud.nas</file>
 			<file>Aircraft/rah-66/nasal/doors.nas</file>
-			<file>Aircraft/rah-66/nasal/lights.nas</file>
 			<file>Aircraft/rah-66/nasal/vhf22.nas</file>
 		</main>
+	    <lights>
+	    	<file>Aircraft/rah-66/nasal/Lights.nas</file>
+	    </lights>
 		<enav>
 			<file>Aircraft/rah-66/nasal/enav.nas</file>
 		</enav>
