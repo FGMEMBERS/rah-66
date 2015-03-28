@@ -11,8 +11,8 @@
 		<path>Aircraft/rah-66/models/panel.xml</path>
 	</model>
 
-    <!-- Rembrandt auto switching for glass -->
-	
+  <!-- Rembrandt auto switching for glass -->
+
     <effect>
         <inherits-from>Effects/model-transparent</inherits-from>
         <condition>
@@ -32,7 +32,7 @@
 		<object-name>blurred5</object-name>
 		<object-name>tail-rotor-disc</object-name>
     </effect>
-	
+
     <!-- Parts invisible from internally -->
     
     <animation>
@@ -48,7 +48,7 @@
     </animation>
 	
 	<!-- Bump map -->
-	
+
 		<effect>
 			<inherits-from>Aircraft/rah-66/models/effects/shaders</inherits-from>
 			<object-name>fuselage</object-name>
@@ -102,7 +102,7 @@
 			<object-name>blade5</object-name>
 			<object-name>tail-rotor</object-name>
 		</effect>
-	
+
 	<!-- lights -->
 	
 	<model>

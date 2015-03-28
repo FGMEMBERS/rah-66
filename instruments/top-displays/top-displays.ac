@@ -1,7 +1,8 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
 OBJECT world
-kids 57
+kids 61
+
 OBJECT poly
 name "vsi.004"
 loc 0.000212245 0.00323439 -0.129538
@@ -964,6 +965,7 @@ refs 3
 0 0 0.5
 7 0.146447 0.146447
 kids 0
+
 OBJECT poly
 name "wing"
 loc -9.40045e-05 0.0175688 0
@@ -983,6 +985,27 @@ refs 4
 1 0 0
 0 1 0
 kids 0
+
+OBJECT poly
+name "wingd"
+loc -9.40045e-05 0.0175688 0
+texture "wingd.png"
+crease 45.000000
+numvert 4
+0 -0.0346376 -0.0346376
+0 -0.0346376 0.0346376
+0 0.0346376 0.0346376
+0 0.0346376 -0.0346376
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+3 1 1
+2 0 1
+1 0 0
+0 1 0
+kids 0
+
 OBJECT poly
 name "stub"
 loc -9.40045e-05 0.0175688 0
@@ -1059,6 +1082,7 @@ refs 4
 1 0 0
 0 1 0
 kids 0
+
 OBJECT poly
 name "master-caution"
 loc 0.000957943 -0.0100084 0.000357091
@@ -3414,6 +3438,7 @@ refs 4
 12 0 0.920741
 3 0 0.920741
 kids 0
+
 OBJECT poly
 name "main"
 loc -9.40045e-05 0.0175688 0
@@ -3433,6 +3458,67 @@ refs 4
 2 0 0
 3 1 0
 kids 0
+
+OBJECT poly
+name "maind"
+loc -9.40045e-05 0.0175688 0
+texture "maind.png"
+crease 45.000000
+numvert 4
+0 0.0346376 -0.0346376
+0 0.0346376 0.0346376
+0 -0.0346376 0.0346376
+0 -0.0346376 -0.0346376
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+
+OBJECT poly
+name "engine"
+loc -9.40045e-05 0.0175688 0
+texture "engine.png"
+crease 45.000000
+numvert 4
+0 0.0346376 -0.0346376
+0 0.0346376 0.0346376
+0 -0.0346376 0.0346376
+0 -0.0346376 -0.0346376
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+
+OBJECT poly
+name "tail"
+loc -9.40045e-05 0.0175688 0
+texture "tail.png"
+crease 45.000000
+numvert 4
+0 0.0346376 -0.0346376
+0 0.0346376 0.0346376
+0 -0.0346376 0.0346376
+0 -0.0346376 -0.0346376
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 1 1
+1 0 1
+2 0 0
+3 1 0
+kids 0
+
 OBJECT poly
 name "pay1"
 loc -9.40045e-05 0.000122066 0.0207344

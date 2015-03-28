@@ -53,10 +53,13 @@
 		<object-name>alt.004</object-name>
 		<object-name>alt.005</object-name>
 		<object-name>rect</object-name>
-		<object-name>master-caution1</object-name>
-		<object-name>fuel-low1</object-name>
-		<object-name>rtr-rpm1</object-name>
-		<object-name>trq1</object-name>
+
+
+        <object-name>maind</object-name>
+        <object-name>engine</object-name>
+        <object-name>wingd</object-name>
+        <object-name>tail</object-name>
+
         <emission>
 		<red>1</red>
 		<green>1</green>
@@ -69,10 +72,113 @@
 
 	<animation>
 		<type>select</type>
+		<object-name>maind</object-name>
+		<condition>
+                   <greater-than>
+		   <property>/bombable/attributes/damage</property>
+                   <value>0.85</value>
+                   </greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>engine</object-name>
+		<condition>
+                 <and>
+                  <less-than>
+                   <property>rotors/main/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>tail</object-name>
+		<condition>
+                 <and>
+                  <less-than>
+                   <property>rotors/tail/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>main</object-name>
+		<condition>
+                   <less-than>
+		   <property>/bombable/attributes/damage</property>
+                   <value>0.85</value>
+                   </less-than>
+
+                    <not>
+                    <or>
+                 <and>
+                  <less-than>
+                   <property>rotors/main/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+                 <and>
+                  <less-than>
+                   <property>rotors/tail/rpm</property>
+                   <value>1</value>
+                  </less-than>
+                  <greater-than>
+	           <property>/controls/engines/engine[0]/magnetos</property>
+                   <value>0</value>
+                  </greater-than>
+                 </and>
+                    </or>
+                    </not>
+
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
 		<object-name>wing</object-name>
 		<condition>
+                        <and>
 			<property>sim/model/livery/winglets</property>
 			<value type="bool">false</value>
+                        <less-than>
+		        <property>/bombable/attributes/damage</property>
+                        <value>0.85</value>
+                        </less-than>
+                        </and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>wingd</object-name>
+		<condition>
+                        <and>
+			<property>sim/model/livery/winglets</property>
+			<value type="bool">false</value>
+                        <greater-than>
+		        <property>/bombable/attributes/damage</property>
+                        <value>0.85</value>
+                        </greater-than>
+                        </and>
 		</condition>
 	</animation>
 	
@@ -93,13 +199,15 @@
 			<value type="bool">false</value>
 		</condition>
 	</animation>
-	
+
 	<animation>
 		<type>select</type>
 		<object-name>bay</object-name>
 		<condition>
-			<property>baydoors/position-norm</property>
-    		<value type="bool">0</value>
+		 <equals>
+		  <property>baydoors/position-norm</property>
+		  <value>1</value>
+		 </equals>
 		</condition>
 	</animation>
 
@@ -107,8 +215,10 @@
 		<type>select</type>
 		<object-name>gear</object-name>
 		<condition>
-			<property>gear/gear[0]/position-norm</property>
-    		<value type="bool">0</value>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
 		</condition>
 	</animation>
 	
@@ -203,8 +313,8 @@
 				<value type="bool">0</value>
 		</condition>
 	</animation>
-	
-<!-- Oil Pressure -->
+
+	<!-- Oil Pressure -->
 
 	<animation>
 		<type>translate</type>
@@ -270,6 +380,7 @@
 				<property>engines/engine[0]/oilp-norm</property>
 				<value>10</value>
 			</greater-than-equals>
+
 		</condition>
 	</animation>
 	
@@ -805,10 +916,16 @@
 		<type>select</type>
 		<object-name>rtr-rpm</object-name>
 		<condition>
+                        <or>
 			<less-than>
-			<property>sim/model/rah-66/turbine-rpm-pct</property>
-			<value>20</value>
+			<property>rotors/main/rpm</property>
+			<value>350</value>
 			</less-than>
+			<greater-than>
+			<property>rotors/main/rpm</property>
+			<value>450</value>
+			</greater-than>
+                        </or>
 		</condition>
 	</animation>
 	

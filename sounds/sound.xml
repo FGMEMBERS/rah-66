@@ -711,6 +711,30 @@
 		<reference-dist>100</reference-dist>
 		<max-dist>500</max-dist>
 	</gun>
+		
+		<hydra>
+			<name>hydra</name>
+			<condition>
+				<property>controls/armament/trigger1</property>
+			</condition>
+			<path>Aircraft/rah-66/sounds/missile.wav</path>
+		</hydra>
+		
+		<stinger>
+			<name>stinger</name>
+			<condition>
+				<property>controls/armament/trigger2</property>
+			</condition>
+			<path>Aircraft/rah-66/sounds/hot.wav</path>
+		</stinger>
+		
+		<hellfire>
+			<name>hellfire</name>
+			<condition>
+				<property>controls/armament/trigger3</property>
+			</condition>
+			<path>Aircraft/rah-66/sounds/hot.wav</path>
+		</hellfire>
 	
 	<gear>
 		<name>gear</name>

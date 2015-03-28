@@ -7,7 +7,7 @@
 		<!-- info -->
 		<description>Boeing-Sikorsky RAH-66 Comanche</description>
 		<author>Petar Jedvaj, Edin Hozic, Stephen Madeira and Gary Brown</author>
-		<status>1.7.3</status>
+		<status>1.7.4</status>
 		<rating>
 			<FDM type="int">4</FDM>
 			<systems type="int">2</systems>
@@ -65,15 +65,6 @@
 		<sound>
 			<path>Aircraft/rah-66/sounds/sound.xml</path>
 		</sound>
-		
-		<!-- flight recorder -->
-		
-			<flight-recorder>
-				<replay-config type="int">0</replay-config>
-				<config n="0" include="/Aircraft/Generic/flightrecorder/generic-helicopter.xml">
-					<name type="string">My Aircraft's Flight Recorder</name>
-				</config>
-			</flight-recorder>
 		
 		<!-- hud -->
 		<hud>
@@ -193,12 +184,8 @@
 		<help>
 			<title>Boeing-Sikorsky RAH-66 Comanche</title>
 			<key>
-				<name>c</name>
+				<name>Ctrl-d</name>
 				<desc>Toggle weapon baydoors</desc>
-			</key>
-			<key>
-				<name>e</name>
-				<desc>Fire Gun</desc>
 			</key>
 			<key>
 				<name>w</name>
@@ -215,7 +202,23 @@
 			<key>
 				<name>d</name>
 				<desc>Rotate Gun Right</desc>
-			</key>                  
+			</key>
+			<key>
+				<name>f</name>
+				<desc>Gun trigger</desc>
+			</key>
+			<key>
+				<name>e</name>
+				<desc>Hydra trigger</desc>
+			</key>
+			<key>
+				<name>q</name>
+				<desc>Hellfire trigger</desc>
+			</key>
+			<key>
+				<name>c</name>
+				<desc>Stinger trigger</desc>
+			</key>       
 			<line>Toggle doors with Left Mouse Button</line>
 			<line>Toggle winglets, stub wings and radar in Livery menu</line>
 			<line>Parking brake is on, press B to release</line>
@@ -316,6 +319,15 @@
 	<!-- shortcuts -->
 	<input>
 		<keyboard>
+			<key n="4">
+				<name>Ctrl-d</name>
+				<desc>Weapon baydoors</desc>
+				<binding>
+					<command>nasal</command>
+					<script>baydoors.baydoors_switch(2)</script>
+				</binding>
+			</key>
+
 			<key n="97">
 				<name>a</name>
 				<desc>Rotate Gun Left</desc>
@@ -327,15 +339,6 @@
 					<step>1</step>
 					<!-- <min>0</min> -->
 					<max>110</max>
-				</binding>
-			</key>
-		
-			<key n="99">
-				<name>c</name>
-				<desc>Weapon baydoors</desc>
-				<binding>
-					<command>nasal</command>
-					<script>baydoors.baydoors_switch(2)</script>
 				</binding>
 			</key>
 
@@ -396,6 +399,68 @@
 					<!--<min>0</min>-->
 					<max>0</max>
 				</binding>
+			</key>
+
+			<key n="99">
+				<name>c</name>
+				<desc>Fire AIM-92 Stinger</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Stinger()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Stinger()</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="101">
+				<name>e</name>
+				<desc>Fire M260 Hydra 70</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Hydra()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Hydra()</script>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="102">
+				<name>f</name>
+				<desc>Fire Machine Gun</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding>
+				</mod-up>
+			</key>
+
+			<key n="113">
+				<name>q</name>
+				<desc>Fire AGM-114 Hellfire</desc>
+				<binding>
+					<command>nasal</command>
+					<script>guns.fire_Hellfire()</script>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>guns.stop_Hellfire()</script>
+					</binding>
+				</mod-up>
 			</key>
 		</keyboard>
 	</input>
@@ -491,7 +556,7 @@
 			<file>Aircraft/rah-66/nasal/vhf22.nas</file>
 		</main>
 	    <lights>
-	    	<file>Aircraft/rah-66/nasal/Lights.nas</file>
+	    	<file>Aircraft/rah-66/nasal/lights.nas</file>
 	    </lights>
 		<enav>
 			<file>Aircraft/rah-66/nasal/enav.nas</file>
@@ -514,6 +579,9 @@
 		<radar2>
 			<file>Aircraft/Instruments-3d/radar2/radar2.nas</file>
 		</radar2>
+		 <guns>
+			<file>Aircraft/rah-66/nasal/weapons.nas</file>
+		</guns>
 	</nasal>
 
 </PropertyList>
