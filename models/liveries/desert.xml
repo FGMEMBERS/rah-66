@@ -6,10 +6,6 @@
 		<model>
 			<livery>
 				<name type="string">Desert Camo (Iraq)</name>
-				<winglets type="bool">false</winglets>
-				<radar type="bool">false</radar>
-				<cone type="bool">true</cone>
-				<stub-wings type="bool">false</stub-wings>
 				<texture>liveries/desert.png</texture>
 			</livery>
 			<livery-logo>

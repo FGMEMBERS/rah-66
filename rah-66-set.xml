@@ -7,7 +7,7 @@
 		<!-- info -->
 		<description>Boeing-Sikorsky RAH-66 Comanche</description>
 		<author>Petar Jedvaj, Edin Hozic, Stephen Madeira and Gary Brown</author>
-		<status>1.7.4</status>
+		<status>1.7.5</status>
 		<rating>
 			<FDM type="int">4</FDM>
 			<systems type="int">2</systems>
@@ -184,6 +184,10 @@
 		<help>
 			<title>Boeing-Sikorsky RAH-66 Comanche</title>
 			<key>
+				<name>{ }</name>
+				<desc>Shutdown/Start turbines</desc>
+			</key>
+			<key>
 				<name>Ctrl-d</name>
 				<desc>Toggle weapon baydoors</desc>
 			</key>
@@ -235,6 +239,19 @@
 						<binding>
 							<command>nasal</command>
 							<script>aircraft.livery.dialog.toggle()</script>
+						</binding>
+					</item>
+					<item>
+						<label>Configuration</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+								var dlg = gui.Dialog.new("/sim/gui/dialogs/config/dialog", "Aircraft/rah-66/dialogs/configuration.xml");
+							</script>
+						</binding>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>Configuration</dialog-name>
 						</binding>
 					</item>
 				</menu>

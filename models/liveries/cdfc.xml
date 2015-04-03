@@ -6,10 +6,6 @@
 		<model>
 			<livery>
 				<name type="string">Concept Digital Forest Camo</name>
-				<winglets type="bool">false</winglets>
-				<radar type="bool">false</radar>
-				<cone type="bool">true</cone>
-				<stub-wings type="bool">false</stub-wings>
 				<texture>liveries/cdfc.png</texture>
 			</livery>
 			<livery-logo>
